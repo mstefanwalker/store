@@ -1,0 +1,31 @@
+---
+- name: Store Playbook
+  hosts: stores
+  remote_user: root
+  become: yes
+  gather_facts: no
+  handlers:
+  - name: restart sshd
+    service:
+      name: sshd
+      state: restarted
+  tasks:
+    - name: Create user and add user to groups
+      user:
+        name: "{{ username }}"
+        password: "{{ password }}"
+        shell: /bin/bash
+        groups: "admin,www-data"
+    - name: Add authorized keys
+      authorized_key:
+        user: "{{ username }}"
+        key: "{{ lookup('pipe', 'cat *.pub') }}"
+      notify: restart sshd
+    - name: Allow admin users to sudo without a password
+      lineinfile:
+        path: "/etc/sudoers"
+        state: "present"
+        regexp: "^%admin"
+        line: "%admin ALL=(ALL:ALL) NOPASSWD: ALL"
+- name: Syncronize Store
+  import_playbook: synchronize-store.yml

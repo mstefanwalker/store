@@ -1,0 +1,13 @@
+---
+- name: Syncronize Store Playbook
+  hosts: store
+  remote_user: "{{ username }}"
+  become: yes
+  gather_facts: no
+  tasks:
+    - name: Syncronize Store
+      synchronize:
+        src: "../../"
+        dest: "{{ store_path }}/"
+        archive: yes
+        delete: yes
