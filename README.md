@@ -3,7 +3,7 @@ store files on a server and keep them in sync!
 
 handy for things where version control isn't needed, but you would like a backup of files just in case
 
-## Setup
+## setup
 
 1) set up a server to be used as a backup and prefereably put a domain name on it.
 2) look in the `ansible` directory and replace any example files with your config and credentials
@@ -12,7 +12,7 @@ handy for things where version control isn't needed, but you would like a backup
 
 You are all set to start syncing you files!
 
-## Sync your files
+## sync your files
 
 place them in the `store` folder and sync them by running this command in the project root:
 
