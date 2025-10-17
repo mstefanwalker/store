@@ -17,5 +17,5 @@ You are all set to start syncing you files!
 place them in the `store` folder and sync them by running this command in the project root:
 
 ```
-./resync
+./sync
 ```
