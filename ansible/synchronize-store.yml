@@ -10,4 +10,5 @@
         src: "../../"
         dest: "{{ store_path }}/"
         archive: yes
-        delete: yes
+        rsync_opts:
+          - "--delete-before"
