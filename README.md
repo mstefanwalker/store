@@ -31,7 +31,7 @@ The file's contents should look like this, with text in `<placeholders>` replace
 
 [stores:vars]
 username=<username of the store user to create on all servers>
-password=<password for the store user, ssh will be used for login>
+password=<password for the store user, keys will be used for ssh login>
 ```
 
 ### Locally Install Ansible
