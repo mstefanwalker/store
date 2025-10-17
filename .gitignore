@@ -1,3 +1,5 @@
 store/*
 !store/README.md
+ansible/*.pub
+ansible/inventory.ini
 
