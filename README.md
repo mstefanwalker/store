@@ -53,5 +53,5 @@ From the `ansible` directory, run `ansible-playbook install-store.yml`.
 Place them in the `store` folder and sync them by running this command in the project root:
 
 ```
-./resync
+./sync
 ```
